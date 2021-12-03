@@ -32,7 +32,7 @@ countSumOfIncrements xs = compareFirstThree xs + countSumOfIncrements (tail xs)
 main :: IO ()
 
 main = do
-    example <- readFile "aoc2021/inputs/example.txt"
+    example <- readFile "aoc2021/inputs/ex1.txt"
     content <- readFile "aoc2021/inputs/1.txt"
     let numbers = getNumbers example
     let numberInput = getNumbers content
