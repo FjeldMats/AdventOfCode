@@ -1,4 +1,4 @@
-f = open('aoc2021/inputs/ex5.txt')
+f = open('aoc2021/inputs/5.txt')
 
 
 def parseline(line):
@@ -67,16 +67,8 @@ def draw_line(board, line, diagonal=False):
         if y1 == max(y1, y2):
             ys = list(reversed(ys))
 
-        if xs[0] != x1 or xs[-1] != x2:
-            print("not 45")
-            return
-
-        if ys[0] != y1 or ys[-1] != y2:
-            print("not 45")
-            return
-
         for x, y in zip(xs, ys):
-            board[x][y] = draw_point(board, x, y)
+            board[y][x] = draw_point(board, y, x)
 
 
 def count_overlaps(board, num):
@@ -95,15 +87,10 @@ board = make_board(max_value+1)
 for line in lines:
     draw_line(board, line)
 
-print_board(board)
 print(count_overlaps(board, 2))
 
 # part 2
-
 board = make_board(max_value+1)
-
-
 for line in lines:
     draw_line(board, line, diagonal=True)
-
 print(count_overlaps(board, 2))
