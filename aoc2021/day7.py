@@ -23,7 +23,9 @@ def calc_fuel2(lst, num):
 m = int(mean(position)) # this works input data 
 n = round(mean(position)) # this works for only test? 
 
-print(m, n)
-print(calc_fuel2(position, m))
-print(calc_fuel2(position, n))
+if calc_fuel2(position, m) > calc_fuel2(position, n):
+    print(n, calc_fuel2(position, n))
+else:
+    print(m, calc_fuel2(position, m))
+
 
