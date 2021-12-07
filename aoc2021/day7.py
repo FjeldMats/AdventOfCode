@@ -20,13 +20,10 @@ def calc_fuel2(lst, num):
     return sum([triangle_num(abs(i-num)) for i in lst])
 
 
-lowest = calc_fuel2(position, 0)
-idx = 0
-for i in range(1, max(position)):
-    s = calc_fuel2(position, i)
-    if s < lowest:
-        lowest = s
-        idx = i
+m = int(mean(position)) # this works input data 
+n = round(mean(position)) # this works for only test? 
 
-print(idx)
-print(calc_fuel2(position, idx))
+print(m, n)
+print(calc_fuel2(position, m))
+print(calc_fuel2(position, n))
+
