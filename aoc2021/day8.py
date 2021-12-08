@@ -3,11 +3,6 @@ file = 'aoc2021/inputs/8.txt'
 digits = [[segment.split(" ") for segment in digit.strip().split(" | ")]
           for digit in open(file).readlines()]
 
-
-# 1 = 2 seg
-# 4 = 4 seg
-# 7 = 3 seg
-# 8 = 7 seg
 unique = [2, 3, 4, 7]
 
 count = 0
@@ -18,43 +13,6 @@ for digit in digits:
 
 print(count)
 
-"""
-dddd
-e    a
-e    a
- ffff
-g    b
-g    b
- cccc
-
-
-2 seg = 1
-3 seg = 7
-4 seg = 4
-5 seg = 2,3,5
-6 seg = 6,9,0
-7 seg = 8
-
-5
-gcdfa (2), fbcad (3), cdfbe (5)
-i know that 1 = ab, 3 is the only number that contains both 
-3 = fbcad
-
-2 or 5 (gcdfa cdfbe)
-using 4 (eafb)
-gcdfa & eafb = af (2 overlaps = 2 ) 
-cdfbe & eafb = efb (3 overlaps = 5)
-
-missing = 6,9,0
-using 1 = ab
-cdfgeb(6), cefabd(9), cagedb(0)
-cdfgeb & ab = b -> 6
-cefabd & ab = ab -> 9 or 0
-
-using 4 (eafb), 0 wil be missing middle segment
-cefabd & eafb = 4 -> 9
-cagedb & eafb = 3 -> 0 
-"""
 
 def overlaps(str1, str2):
     o = 0
@@ -92,25 +50,27 @@ def decode(numbers):
             num[2] = 8
 
     for num in numbers:
-        # find 3, only 5 segment that contains both segments in one
+        # find 3, only 5 segment that contains both segments in 'one'
         if num[1] == 5 and contains(one, num[0]):
             num[2] = 3
-        # find  2
+        # find  2, only with an overlap of 2 with four
         elif num[1] == 5 and overlaps(num[0], four) == 2:
             num[2] = 2
-        # find 5
+        # find 5, only with an overlap of 3 with four
         elif num[1] == 5 and overlaps(num[0], four) == 3:
             num[2] = 5
-        # 6
+
+        # 6, only with 1 overlap with one
         elif num[1] == 6 and overlaps(num[0], one) == 1:
             num[2] = 6
 
-        # 9 or 0
+        # 9 or 0, both 9 and 0 have 2 overlap with one
         elif num[1] == 6 and overlaps(num[0], one) == 2:
             if overlaps(num[0], four) == 4:
                 num[2] = 9
             if overlaps(num[0], four) == 3:
                 num[2] = 0
+
 
 total = 0
 for row in digits:
