@@ -4,7 +4,7 @@ My solutions to [advent of code](adventofcode.com)
 
 ## 2021
 
-| Day | Python                        | Haksell                       |
+| Day | Python                        | Haskell                       |
 | --- | ----------------------------- | ----------------------------- |
 | 1   | ✅ [day1.py](aoc2021/day1.py) | ✅ [day1.hs](aoc2021/day1.hs) |
 | 2   | ✅ [day2.py](aoc2021/day2.py) | ✅ [day2.hs](aoc2021/day2.hs) |
@@ -33,7 +33,7 @@ My solutions to [advent of code](adventofcode.com)
 
 ## 2019
 
-| Day | Python                        | Haksell                       |
+| Day | Python                        | Haskell                       |
 | --- | ----------------------------- | ----------------------------- |
 | 1   | ✅ [day1.py](aoc2019/day1.py) | ✅ [day1.hs](aoc2019/day1.hs) |
 | 2   | ✅ [day2.py](aoc2019/day2.py) | ✅ [day2.hs](aoc2019/day2.hs) |
