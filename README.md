@@ -16,7 +16,7 @@ My solutions to [advent of code](adventofcode.com)
 | 8   | ✅ [day8.py](aoc2021/day8.py)   |                               |
 | 9   | ✅ [day9.py](aoc2021/day9.py)   |                               |
 | 10  | ✅ [day10.py](aoc2021/day10.py) |                               |
-| 11  |                                 |                               |
+| 11  | ✅ [day11.py](aoc2021/day11.py) |                               |
 | 12  |                                 |                               |
 | 13  |                                 |                               |
 | 14  |                                 |                               |
